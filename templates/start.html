@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} lit Search {% endblock %}
+
+{% block search_bar %}
+<link rel="stylesheet" href="./static/styles/mainpage.css" >
+<script src="../static/js/actions.js"></script>
+<div class="logo">
+<h1>lit search</h1>
+</div>
+<div class="search">
+<input type="text" id="search-bar" autocomplete="on">
+<button id="search-bttn" onclick="getResults()">Search</button>
+</div>
+
+{% endblock %}
+
+
