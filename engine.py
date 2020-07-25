@@ -70,7 +70,7 @@ class Search_Engine:
 
 def start(user_input_raw):
   s_e = Search_Engine()
-  df = pd.read_csv('C:/Users/Christopher/Desktop/python/search_engine/dataset/small.csv')
+  df = pd.read_csv('https://raw.githubusercontent.com/chrisyin98/s_e/master/dataset/small.csv')
   #traffic = df.Avg_Daily_Visitors.tolist() #df.Avg_Daily_Visitors.tolist()[1:]
   descriptions = df.Description.tolist()
   website_names = df.Website.tolist()
