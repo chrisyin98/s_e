@@ -1,6 +1,6 @@
-Country_Rank,Website,Trustworthiness,Avg_Daily_Visitors
-1,www.google.com.af,Excellent,3453435
-2,www.google.com,Excellent,515007350
-3,www.youtube.com,Excellent,506457282
-4,www.facebook.com,Excellent,270071255
-5,www.yahoo.com,Excellent,99572035
+Country_Rank,Website,Trustworthiness,Avg_Daily_Visitors,Description
+1,www.google.com.af,Excellent,3453435,I love watching movies when it's cold outside
+2,www.google.com,Excellent,515007350,"Toy Story is the best animation movie ever, I love it!"
+3,www.youtube.com,Excellent,506457282,Watching horror movies alone at night is really scary
+4,www.facebook.com,Excellent,270071255,He loves to watch films filled with suspense and unexpected plot twists
+5,www.yahoo.com,Excellent,99572035,My mom loves to watch movies. My dad hates movie theaters. My brothers like any kind of movie. And I haven't watched a single movie since I got into college
