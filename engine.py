@@ -7,41 +7,7 @@ import numpy as np
 class Search_Engine:
 
   def __init__(self):
-    self.auto_c_results = dict()
-
-  def search_algorithm(self, term, websites):
-    index = -1
-    left = 0
-    right = len(websites) - 1
-    display_terms = []
-
-    if(term.endswith('.')):
-      term.replace('.', '')
-
-    if(term.startswith('www.')):
-      term = term.split('.')[1]
-    elif(term.endswith('.com')):
-      term = term.split('.')[0]
-
-    if(term.endswith('s')):
-      term = term[:-1]
-    if(term.endswith('es')):
-      term = term[:-2]
-
-
-    first = self.first_index_find(index, left, right, term, websites)
-    last = self.last_index_find(index, left, right, term, websites)
-
-  #  if(first == -1 and last == -1):
-  #    display_terms.append(Term('', 0, 'Cannot be found'))
-  #  else:
-  #    for a in range(first,last+1):
-  #      display_terms.append(websites[a])
-
-
-    display_terms = sorted(display_terms, key= lambda x: x.get_weight())
-    #order would be by cosine similiarty
-    return display_terms
+    self.auto_c_results = dict() #unused
 
   def first_index_find(self, index, left, right, term, websites):
     while(left <= right):
@@ -71,14 +37,10 @@ class Search_Engine:
 def start(user_input_raw):
   s_e = Search_Engine()
   df = pd.read_csv('https://raw.githubusercontent.com/chrisyin98/s_e/master/dataset/small.csv')
-  #traffic = df.Avg_Daily_Visitors.tolist() #df.Avg_Daily_Visitors.tolist()[1:]
   descriptions = df.Description.tolist()
   website_names = df.Website.tolist()
 
 
-
-  #user_input = ""
-  #user_input_raw = "scary" #input('Search?')
   refine_input = user_input_raw.replace('.com', '')
   refine_input = refine_input.lower()
   refine_input = refine_input.replace('www.','')
@@ -94,7 +56,6 @@ def start(user_input_raw):
   tf_idf_list = []
 
   for a in range(len(user_input)):
-    #default_q_vals.append(1)
     tf_list = []
     count = 0
     for x in range(len(descriptions)):
@@ -136,9 +97,6 @@ def start(user_input_raw):
       final_list.append(Term(descriptions[i], ordered_list[i], website_names[i]))
 
   display_terms = sorted(final_list, key =lambda x: x.get_weight(), reverse = True)
-  #for x in range(len(display_terms)):
-   # print(display_terms[x].get_website_nme(), display_terms[x].get_weight())
-  #  print(display_terms[x].get_descrip())
   return display_terms
 
 
@@ -153,10 +111,6 @@ def cos_similarity(default_q_vals, tf_idf_list):
     refine_cos_sim = np.array(cos_sim).tolist()
     final_list.append(refine_cos_sim[0][0])
   return final_list
-
-
-
-
 
 
 class Term:
