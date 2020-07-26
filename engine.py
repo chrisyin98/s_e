@@ -94,10 +94,9 @@ def start(user_input_raw):
 
   final_list = []
 
-
   for i in range(len(website_names)):
-    if(ordered_list[i] > 0):
-      final_list.append(Term(descriptions[i], ordered_list[i], website_names[i]))
+    #if(ordered_list[i] > 0):
+    final_list.append(Term(descriptions[i], ordered_list[i], website_names[i]))
 
   display_terms = sorted(final_list, key =lambda x: x.get_weight(), reverse = True)
   return display_terms
