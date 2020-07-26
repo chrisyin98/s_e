@@ -1,11 +1,9 @@
 "use strict";
-document.onload(
-  document.body.onkeydown = function(e) {
-    if(e.keyCode == 13) {
-      getResults();
-    }
+document.body.onkeydown = function(e) {
+  if(e.keyCode == 13) {
+    getResults();
   }
-)
+}
 function getResults() {
   const entry = id('search-bar').value;
   const url = window.origin;
@@ -25,16 +23,22 @@ function displayResults(info) {
     id('s-results').appendChild(text);
   }
   for(let i = 0; i < info.length; i++) {
-    let text = document.createElement('p');
-    text.textContent = "Website: " + info[i].website_nme;
+    let web = document.createElement('p');
+    web.id = 'web-name'
+    web.textContent = "Website: ";
+    let website = document.createElement('a');
+    website.href = "https://" + info[i].website_nme;
+    website.textContent = info[i].website_nme;
+    website.style = "font-size:25px;";
     let num = document.createElement('p');
     num.textContent = "cos_sim weight: " + info[i].weight;
     num.style = "font-size:10px;";
-    let text2 = document.createElement('p');
-    text2.textContent = "Description: " + info[i].descrip;
-    id('s-results').appendChild(text);
+    let description = document.createElement('p');
+    description.textContent = "Description: " + info[i].descrip;
+    id('s-results').appendChild(web);
+    id('s-results').appendChild(website);
     id('s-results').appendChild(num)
-    id('s-results').appendChild(text2);
+    id('s-results').appendChild(description);
   }
 
 }
