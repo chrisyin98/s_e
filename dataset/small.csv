@@ -1,6 +1,6 @@
-Country_Rank,Website,Trustworthiness,Avg_Daily_Visitors,Description
-1,www.google.com.af,Excellent,3453435,I love watching movies when it's cold outside
-2,www.google.com,Excellent,515007350,"Toy Story is the best animation movie ever, I love it!"
-3,www.youtube.com,Excellent,506457282,Watching horror movies alone at night is really scary
-4,www.facebook.com,Excellent,270071255,He loves to watch films filled with suspense and unexpected plot twists
-5,www.yahoo.com,Excellent,99572035,My mom loves to watch movies. My dad hates movie theaters. My brothers like any kind of movie. And I haven't watched a single movie since I got into college
+Index,Website,Trustworthiness,Avg_Daily_Visitors,Description
+1,www.wikipedia.org,Excellent,3453435,"Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation."
+2,www.google.com,Excellent,515007350,"Search the world's information, including webpages, images, videos and more. Google has many special features to help you find exactly what you're looking"
+3,www.youtube.com,Excellent,506457282,"Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube."
+4,www.facebook.com,Excellent,270071255,"Create an account or log into Facebook. Connect with friends, family and other people you know. Share photos and videos, send messages and get updates."
+5,www.yahoo.com,Excellent,99572035,"Yahoo is an American web services provider headquartered in Sunnyvale, California, and ... The ""yahoo.com"" domain was created on January 18, 1995."
