@@ -29,7 +29,7 @@ function displayResults(info) {
     let website = document.createElement('a');
     website.href = "https://" + info[i].website_nme;
     website.textContent = info[i].website_nme;
-    website.style = "font-size:25px;";
+    website.style = "font-size:20px;";
     let num = document.createElement('p');
     num.textContent = "cos_sim weight: " + info[i].weight;
     num.style = "font-size:10px;";
