@@ -1,9 +1,11 @@
 "use strict";
-document.body.onkeydown = function(e) {
-  if(e.keyCode == 13) {
-    getResults();
+document.onload(
+  document.body.onkeydown = function(e) {
+    if(e.keyCode == 13) {
+      getResults();
+    }
   }
-}
+)
 function getResults() {
   const entry = id('search-bar').value;
   const url = window.origin;

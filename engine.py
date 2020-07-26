@@ -41,11 +41,11 @@ def start(user_input_raw):
   website_names = df.Website.tolist()
 
 
-  refine_input = user_input_raw.replace('.com', '')
+  refine_input = user_input_raw.replace('.com', ' ')
   refine_input = refine_input.lower()
-  refine_input = refine_input.replace('www.','')
-  refine_input = refine_input.replace('.', '')
-  refine_input = refine_input.replace(',', '')
+  refine_input = refine_input.replace('www.',' ')
+  refine_input = refine_input.replace('.', ' ')
+  refine_input = refine_input.replace(',', ' ')
   user_input = refine_input.split(' ')
 
 
@@ -61,6 +61,9 @@ def start(user_input_raw):
     for x in range(len(descriptions)):
       remove_period = descript_to_lower[x].replace('.com', ' ')  #filter www in description creation
       remove_period = remove_period.replace('/', ' ')
+      remove_period = remove_period.replace(',', '')
+      remove_period = remove_period.replace(':', ' ')
+      remove_period = remove_period.replace(';', '')
       remove_period = remove_period.replace('.', ' ')
       descrip_prep = sorted(remove_period.split(" ")) #sorted description in alphabetical order
       first = s_e.first_index_find(-1, 0, len(descrip_prep) - 1, user_input[a], descrip_prep)
