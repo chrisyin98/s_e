@@ -11,7 +11,15 @@
   margin: -20px;
 }
 
+.logo {
+  margin-top: -60px;
+}
 #s-results {
   margin: -10px;
   margin-left: 5px;
+}
+
+img {
+  padding-bottom: -100px;
+  padding-right: 175px;
 }

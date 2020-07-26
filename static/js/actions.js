@@ -18,7 +18,7 @@ function displayResults(info) {
   id('s-results').innerHTML = "";
   if(info.length < 1) {
     let text = document.createElement('p');
-    text.textContent = "No results found, crawling now..."
+    text.textContent = "No results found"
     id('s-results').appendChild(text);
   }
   for(let i = 0; i < info.length; i++) {
