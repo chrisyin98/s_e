@@ -27,7 +27,7 @@ function displayResults(info) {
     web.id = 'web-name'
     web.textContent = "Website: ";
     let website = document.createElement('a');
-    website.href = "https://" + info[i].website_nme;
+    website.href = info[i].website_nme;
     website.textContent = info[i].website_nme;
     website.style = "font-size:20px;";
     let num = document.createElement('p');
