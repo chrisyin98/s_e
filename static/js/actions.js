@@ -9,8 +9,6 @@ document.onload(
 function getResults() {
   const entry = id('search-bar').value;
   const url = window.origin;
-  console.log(entry);
-  console.log(url);
   fetch(url + '/search', {
     method: "POST",
     body: entry
@@ -20,7 +18,6 @@ function getResults() {
 }
 
 function displayResults(info) {
-  console.log(info);
   id('s-results').innerHTML = "";
   if(info.length < 1) {
     let text = document.createElement('p');
