@@ -48,6 +48,7 @@ def start(user_input_raw):
   refine_input = refine_input.replace('www.',' ')
   refine_input = refine_input.replace('.', ' ')
   refine_input = refine_input.replace(',', ' ')
+  refine_input = refine_input.replace('!', '')
   user_input = refine_input.split(' ')
 
   for index in range(len(user_input)):
