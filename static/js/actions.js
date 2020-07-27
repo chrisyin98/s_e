@@ -7,6 +7,10 @@ document.body.onkeydown = function(e) {
 function getResults() {
   const entry = id('search-bar').value;
   const url = window.origin;
+  const loadingDisplay = document.createElement('p');
+  loadingDisplay.textContent = "Searching.."
+  loadingDisplay.style = "font-size:20px;";
+  id('s-results').appendChild(loadingDisplay);
   fetch(url + '/search', {
     method: "POST",
     body: entry
