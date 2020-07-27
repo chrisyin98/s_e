@@ -48,7 +48,11 @@ def start(user_input_raw):
   refine_input = refine_input.replace(',', ' ')
   user_input = refine_input.split(' ')
 
-
+#IF STEMMING AND LEMMATIZATION should be applied before USER_INPUT_RAW GETS INPUTTED IF DESIRED
+                            #^
+                            #|
+                            #|
+                            #|
   descriptions.append(user_input_raw)
   descript_to_lower = [x.lower() for x in descriptions]
 
