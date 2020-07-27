@@ -4,6 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from numpy import dot
 from numpy.linalg import norm
 import numpy as np
+from nltk.stem.wordnet import WordNetLemmatizer
 class Search_Engine:
 
   def __init__(self):
@@ -35,6 +36,7 @@ class Search_Engine:
 
 
 def start(user_input_raw):
+  lemma = WordNetLemmatizer()
   s_e = Search_Engine()
   df = pd.read_csv('https://raw.githubusercontent.com/chrisyin98/s_e/master/dataset/websites.csv')
   descriptions = df.Description.tolist()
@@ -48,11 +50,10 @@ def start(user_input_raw):
   refine_input = refine_input.replace(',', ' ')
   user_input = refine_input.split(' ')
 
-#IF STEMMING AND LEMMATIZATION should be applied before USER_INPUT_RAW GETS INPUTTED IF DESIRED
-                            #^
-                            #|
-                            #|
-                            #|
+  for index in range(len(user_input)):
+    user_input[index] = user_input[index].lower()
+    user_input[index] = lemma.lemmatize(user_input[index])
+
   descriptions.append(user_input_raw)
   descript_to_lower = [x.lower() for x in descriptions]
 
@@ -64,12 +65,17 @@ def start(user_input_raw):
     count = 0
     for x in range(len(descriptions)):
       remove_period = descript_to_lower[x].replace('.com', ' ')  #filter www in description creation
+      remove_period = remove_period.replace('(', '')
+      remove_period = remove_period.replace(')', '')
+      remove_period = remove_period.replace('!', '')
       remove_period = remove_period.replace('/', ' ')
       remove_period = remove_period.replace(',', '')
       remove_period = remove_period.replace(':', ' ')
       remove_period = remove_period.replace(';', '')
       remove_period = remove_period.replace('.', ' ')
       descrip_prep = sorted(remove_period.split(" ")) #sorted description in alphabetical order
+      for index in range(len(descrip_prep)):
+        descrip_prep[index] = lemma.lemmatize(descrip_prep[index])
       first = s_e.first_index_find(-1, 0, len(descrip_prep) - 1, user_input[a], descrip_prep)
       last = s_e.last_index_find(-1, 0, len(descrip_prep) - 1, user_input[a], descrip_prep)
       amt_in_descrip = 0
